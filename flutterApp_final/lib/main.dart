@@ -14,8 +14,8 @@ void main() {
   );
 }
 
-class firstApp extends StatelessWidget {
-  const firstApp({Key? key}) : super(key: key);
+class homeScreen extends StatelessWidget {
+  const homeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,7 @@ class firstApp extends StatelessWidget {
                 onTap: (){
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => animalDetails(
+                    MaterialPageRoute(builder: (context) => descriptionScreen(
                         animalName: animals[index]["animal"],
                         animalDescription: animals[index]["description"],
                         animalStatus: animals[index]["status"],
@@ -62,8 +62,8 @@ class firstApp extends StatelessWidget {
 }
 
 
-class animalDetails extends StatelessWidget {
-  const animalDetails({Key? key, required this.animalName, required this.animalDescription, required this.animalStatus, required this.animalURL}) : super(key: key);
+class descriptionScreen extends StatelessWidget {
+  const descriptionScreen({Key? key, required this.animalName, required this.animalDescription, required this.animalStatus, required this.animalURL}) : super(key: key);
   final String animalName;
   final String animalDescription;
   final String animalStatus;
@@ -123,7 +123,7 @@ class splashScreen extends StatelessWidget {
       showLoader: true,
       loaderColor: const Color(0xFFCEE5D0) ,
       loadingText: const Text("Loading..."),
-      navigator: const firstApp(),
+      navigator: const homeScreen(),
       durationInSeconds: 5,
     );
   }
